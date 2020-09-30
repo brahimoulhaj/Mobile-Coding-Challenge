@@ -1,4 +1,4 @@
-package com.braoul.github30days;
+package com.braoul.github30days.Model;
 
 import java.util.HashMap;
 import java.util.Map;
