@@ -109,7 +109,12 @@ public class RepoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             viewHolder.tvRepoName.setText(repository.getName());
             viewHolder.tvRepoDesc.setText(repository.getDescription());
-            viewHolder.tvRepoStars.setText(repository.getNumStars() + "");
+            if (repository.getNumStars() >= 1000) {
+                double nstars = (double) repository.getNumStars() / 1000.0;
+                viewHolder.tvRepoStars.setText(nstars + "k");
+            } else {
+                viewHolder.tvRepoStars.setText(repository.getNumStars() + "");
+            }
             viewHolder.tvRepoOwnerName.setText(repository.getOwnerUsername());
 
             Glide.with(activity)
